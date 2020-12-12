@@ -40,3 +40,11 @@ for i in liste_mot:
             name_max = "Vers l'avant"
         print("\nDirection dans laquelle vous avez fait le plus de pas :", name_max)
 f.close()
+
+f = open("lafamilleDodo.txt", "r")
+liste_ages = str(f.read()).split(",")
+mylist = list(dict.fromkeys(liste_ages))
+for i in range(len(mylist)):
+    mylist[i] = int(mylist[i])
+print(sorted(mylist))
+f.close()
