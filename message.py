@@ -46,7 +46,13 @@ f.close()
 
 f = open("lafamilleDodo.txt", "r")
 liste_num = str(f.read()).split(",")
-liste_num = list(dict.fromkeys(liste_num))
+temp_list = []
+
+for i in liste_num:
+    if i not in temp_list:
+        temp_list.append(i)
+
+liste_num = temp_list
 for i in range(len(liste_num)):
     liste_num[i] = int(liste_num[i])
 print("\nListe des ages triées, sans doublons :",sorted(liste_num))
