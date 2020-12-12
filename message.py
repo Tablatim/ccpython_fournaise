@@ -41,10 +41,25 @@ for i in liste_mot:
         print("\nDirection dans laquelle vous avez fait le plus de pas :", name_max)
 f.close()
 
+
+# 2
+
 f = open("lafamilleDodo.txt", "r")
-liste_ages = str(f.read()).split(",")
-mylist = list(dict.fromkeys(liste_ages))
-for i in range(len(mylist)):
-    mylist[i] = int(mylist[i])
-print(sorted(mylist))
+liste_num = str(f.read()).split(",")
+liste_num = list(dict.fromkeys(liste_num))
+for i in range(len(liste_num)):
+    liste_num[i] = int(liste_num[i])
+print("\nListe des ages triées, sans doublons :",sorted(liste_num))
 f.close()
+
+
+f = open("ageDodo.txt", "r")
+liste_ages = str(f.read()).split(", ")
+mineurs, majeurs = 0,0
+for i in liste_ages:
+    i = int(i)
+    if i >= 5:
+        majeurs += 1
+    else :
+        mineurs += 1
+print("\nIl y a",mineurs,"mineurs et", majeurs, "majeurs.")
